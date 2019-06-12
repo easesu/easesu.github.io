@@ -1,7 +1,11 @@
 ---
 layout: page
 ---
-
+<link rel="stylesheet" href="{{ '/assets/css/index.css?v=' | append: site.github.build_revision | relative_url }}">
+<div class="catalog">
 {% for post in site.posts %}
-    <div><a href="{{post.url}}">{{post.title}}</a></div>
+    <div class="catalog-item">
+        <a href="{{post.url}}">{{post.title}}</a>
+    </div>
 {% endfor %}
+</div>

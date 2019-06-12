@@ -1,0 +1,129 @@
+---
+---
+
+@import 'markdown';
+
+.back {
+    position: absolute;
+    left: -70px;
+    top: 80px;
+    width: 50px;
+    height: 50px;
+
+    .middle,
+    .up,
+    .down {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 30px;
+        height: 1px;
+        background: #666;
+        transform: translate(0, -50%);
+        box-shadow: 0 3px 5px #aaa;
+    }
+
+    .middle {
+        left: 0;
+        width: 50px;
+        animation: middleBackAnimation 100ms;
+        animation-fill-mode: forwards;
+    }
+
+    .up {
+        transform: translate(0, -50%) rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+
+    .down {
+        transform: translate(0, -50%) rotate(45deg);
+        transform-origin: 0 0;
+    }
+
+    &:hover {
+        .up {
+            animation: upAnimation 800ms;
+        }
+        .down {
+            animation: downAnimation 800ms;
+        }
+        .middle {
+            animation: middleAnimation 800ms;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes upAnimation {
+    65% {
+        width: 40px;
+        transform: translate(0, -50%) rotate(-10deg);
+    }
+    70% {
+        width: 30px;
+        transform: translate(0, -50%) rotate(-50deg);
+    }
+    75% {
+        transform: translate(0, -50%) rotate(-43deg);
+    }
+    79% {
+        transform: translate(0, -50%) rotate(-47deg);
+    }
+    82% {
+        transform: translate(0, -50%) rotate(-44deg);
+    }
+    84% {
+        transform: translate(0, -50%) rotate(-45deg);
+    }
+}
+@keyframes downAnimation {
+    65% {
+        width: 40px;
+        transform: translate(0, -50%) rotate(10deg);
+    }
+    70% {
+        width: 30px;
+        transform: translate(0, -50%) rotate(45deg);
+    }
+    75% {
+        transform: translate(0, -50%) rotate(43deg);
+    }
+
+    79% {
+        transform: translate(0, -50%) rotate(47deg);
+    }
+
+    82% {
+        transform: translate(0, -50%) rotate(44deg);
+    }
+
+    84% {
+        transform: translate(0, -50%) rotate(45deg);
+    }
+}
+@keyframes middleAnimation {
+    65% {
+        width: 50px;
+        left: 20px;
+    }
+    70% {
+        width: 50px;
+        left: 0;
+    }
+    75% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+    }
+}
+@keyframes middleBackAnimation {
+    0% {
+        left: -10px;
+        width: 0;
+    }
+    100% {
+        left: 0;
+        width: 50px;
+    }
+}
